@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KEO Observation</title>
+<style>
+body {
+  font-family: Arial;
+  background: #0b1e3a;
+  color: white;
+  padding: 20px;
+}
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+h2 {
+  text-align: center;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 25px; /* cylinder shape */
+  border: none;
+}
+textarea {
+  border-radius: 15px;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  background: #1fbe7a;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 25px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h2>KEO Safety Observation</h2>
+
+<form action="https://formsubmit.co/Ugochukwu.Odoemelam@keo.com" method="POST" enctype="multipart/form-data">
+
+<input type="hidden" name="_next" value="https://jahanjaved.github.io/keo-observation/thank-you.html">
+
+<label>Date</label>
+<input type="date" name="Date" required>
+
+<input type="text" name="Location" placeholder="Location / Cluster" required>
+
+<select name="Category">
+<option>Work at Height</option>
+<option>Scaffolding</option>
+<option>Housekeeping</option>
+<option>Electrical</option>
+<option>Fire Safety</option>
+<option>Traffic</option>
+<option>Other</option>
+</select>
+
+<select name="Severity">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+<option>Critical</option>
+</select>
+
+<textarea name="Description" placeholder="Describe observation..." required></textarea>
+
+<input type="file" name="file">
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+</body>
+</html>
