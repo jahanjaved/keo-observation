@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KEO Guest Observation QR</title>
+  <style>
+    body {
+      margin:0;
+      padding:28px;
+      font-family:Arial, Helvetica, sans-serif;
+      background:#eef4ff;
+      color:#10264a;
+    }
+    .poster {
+      max-width:980px;
+      margin:0 auto;
+      background:white;
+      border:1px solid #d9e4f6;
+      border-radius:24px;
+      padding:30px;
+      box-shadow:0 14px 32px rgba(0,0,0,.08);
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:340px 1fr;
+      gap:30px;
+      align-items:center;
+    }
+    .left {
+      padding:18px;
+      border:1px solid #d9e4f6;
+      border-radius:22px;
+      background:#f8fbff;
+      text-align:center;
+    }
+    .left img.qr {
+      width:100%;
+      max-width:280px;
+      height:auto;
+      background:white;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid #eef3fb;
+    }
+    .left .url {
+      margin-top:14px;
+      font-size:.88rem;
+      line-height:1.45;
+      color:#496087;
+      word-break:break-all;
+    }
+    .logo {
+      height:56px;
+      width:auto;
+      display:block;
+      margin-bottom:18px;
+      background:white;
+      padding:4px;
+      border-radius:6px;
+    }
+    h1 {
+      margin:0 0 12px;
+      font-size:clamp(2rem, 4vw, 3.1rem);
+      line-height:1.02;
+      letter-spacing:-0.02em;
+    }
+    p {
+      margin:0 0 12px;
+      line-height:1.58;
+      color:#41557c;
+      font-size:1rem;
+    }
+    .actions {
+      margin-top:22px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    button, a {
+      border:none;
+      border-radius:14px;
+      padding:13px 18px;
+      font-weight:700;
+      font-size:1rem;
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .primary { background:#1177dd; color:white; }
+    .secondary { background:#eef4ff; color:#0b5cb5; }
+    .small {
+      margin-top:16px;
+      font-size:.88rem;
+      color:#7a5a00;
+      background:#fff8e8;
+      border:1px solid #f1dda3;
+      padding:12px 14px;
+      border-radius:12px;
+      line-height:1.5;
+    }
+    @media print {
+      body { padding:0; background:white; }
+      .poster { box-shadow:none; border:none; border-radius:0; }
+      .actions, .small { display:none; }
+    }
+    @media (max-width:740px) {
+      .grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="grid">
+      <div class="left">
+        <img class="qr" src="keo-observation-qr.png" alt="KEO observation QR code" />
+        <div class="url">https://YOUR-DOMAIN/observation.html</div>
+      </div>
+
+      <div>
+        <img class="logo" src="KEO.png" alt="KEO logo" />
+        <h1>Scan to report a safety observation</h1>
+        <p>Use this QR code to open the KEO guest observation form.</p>
+        <p>Visitors can submit comments and one photo directly to the KEO team.</p>
+
+        <div class="actions">
+          <button class="primary" onclick="window.print()">Print / Save PDF</button>
+          <a class="secondary" href="observation.html">Open form</a>
+        </div>
+
+        <div class="small">
+          This package is professionally styled and complete, but the QR image currently points to a placeholder website link. To make the QR fully live, replace it with your real public form URL after upload.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

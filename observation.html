@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KEO Guest Observation</title>
+  <style>
+    :root {
+      --bg:#0b1730;
+      --panel:#112347;
+      --line:#223a6b;
+      --text:#eef4ff;
+      --muted:#a9b8d8;
+      --accent:#1177dd;
+      --accent2:#0a59b8;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      min-height:100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(17,119,221,.16), transparent 25%),
+        linear-gradient(180deg,#081223 0%,#0d1b35 100%);
+    }
+    .wrap {
+      width:min(100%, 860px);
+      margin:0 auto;
+      padding:28px 18px 40px;
+    }
+    .card {
+      background:linear-gradient(180deg, rgba(17,35,71,.98), rgba(12,26,52,.98));
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 18px 40px rgba(0,0,0,.22);
+    }
+    .hero {
+      padding:26px 26px 18px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg, rgba(17,119,221,.12), rgba(255,255,255,0));
+    }
+    .logo {
+      height:52px;
+      width:auto;
+      display:block;
+      margin-bottom:18px;
+      background:white;
+      padding:4px;
+      border-radius:6px;
+    }
+    h1 {
+      margin:0;
+      font-size:clamp(1.8rem, 3.3vw, 2.5rem);
+      line-height:1.06;
+      letter-spacing:-0.02em;
+    }
+    .sub {
+      margin:12px 0 0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:1rem;
+      max-width:760px;
+    }
+    form {
+      padding:24px 26px 30px;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+    }
+    .full { grid-column:1 / -1; }
+    label {
+      display:block;
+      margin:0 0 8px;
+      font-size:.92rem;
+      font-weight:700;
+    }
+    input, select, textarea {
+      width:100%;
+      padding:14px 15px;
+      border-radius:14px;
+      border:1px solid #304a80;
+      background:#0a1831;
+      color:white;
+      font:inherit;
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color:#54aeff;
+      box-shadow:0 0 0 3px rgba(84,174,255,.16);
+    }
+    textarea {
+      min-height:150px;
+      resize:vertical;
+    }
+    .help {
+      margin-top:7px;
+      color:var(--muted);
+      font-size:.8rem;
+    }
+    .actions {
+      margin-top:20px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    button {
+      appearance:none;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(180deg, var(--accent), var(--accent2));
+      color:white;
+      padding:15px 22px;
+      font-size:1rem;
+      font-weight:800;
+      cursor:pointer;
+      min-width:220px;
+    }
+    .note {
+      color:var(--muted);
+      font-size:.84rem;
+      line-height:1.5;
+    }
+    .footer {
+      padding:0 26px 22px;
+      color:var(--muted);
+      font-size:.82rem;
+    }
+    .req { color:#8dd0ff; }
+    @media (max-width:700px) {
+      .grid { grid-template-columns:1fr; }
+      button { width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="hero">
+        <img class="logo" src="KEO.png" alt="KEO logo" />
+        <h1>Guest Safety Observation</h1>
+        <p class="sub">Please report any unsafe condition, access issue, near miss, or improvement observation.</p>
+      </div>
+
+      <form action="https://formsubmit.co/Ugochukwu.Odoemelam@keo.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New KEO Guest Observation" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="thank-you.html" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="grid">
+          <div>
+            <label>Your name</label>
+            <input type="text" name="Visitor Name" placeholder="Optional" />
+          </div>
+
+          <div>
+            <label>Company</label>
+            <input type="text" name="Company" placeholder="Optional" />
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input type="email" name="Visitor Email" placeholder="Optional" />
+          </div>
+
+          <div>
+            <label>Mobile number</label>
+            <input type="text" name="Visitor Mobile" placeholder="Optional" />
+          </div>
+
+          <div>
+            <label>Location / Cluster / Area <span class="req">*</span></label>
+            <input type="text" name="Location / Cluster / Area" placeholder="Example: Cluster 2A, Villa 65" required />
+          </div>
+
+          <div>
+            <label>Observation category <span class="req">*</span></label>
+            <select name="Observation Category" required>
+              <option value="">Select category</option>
+              <option>Work at Height</option>
+              <option>Scaffolding</option>
+              <option>Excavation</option>
+              <option>Housekeeping</option>
+              <option>Electrical</option>
+              <option>Fire Safety</option>
+              <option>Traffic / Access</option>
+              <option>Lifting Operations</option>
+              <option>General Safety</option>
+              <option>Positive Observation</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Severity</label>
+            <select name="Severity">
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Date and time seen</label>
+            <input type="datetime-local" name="Date and Time Seen" />
+          </div>
+
+          <div class="full">
+            <label>Observation details <span class="req">*</span></label>
+            <textarea name="Observation Details" placeholder="Describe what you observed and where it was seen." required></textarea>
+          </div>
+
+          <div class="full">
+            <label>Attach photo</label>
+            <input type="file" name="attachment" accept="image/png,image/jpeg,image/webp,.pdf" />
+            <div class="help">Attach one clear photo if available.</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Submit observation</button>
+          <div class="note">After the first test submission, confirm the first FormSubmit email once. Future submissions will then arrive automatically.</div>
+        </div>
+      </form>
+
+      <div class="footer">KEO Guest Observation Form</div>
+    </div>
+  </div>
+</body>
+</html>
