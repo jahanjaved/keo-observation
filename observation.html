@@ -1,82 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KEO Observation</title>
+<title>KEO Safety Observation</title>
+
 <style>
 body {
-  font-family: Arial;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background: #0b1e3a;
   color: white;
-  padding: 20px;
 }
+
+/* Container */
 .container {
-  max-width: 500px;
-  margin: auto;
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #102a4d;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+
+/* Logo */
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.logo img {
+  width: 120px;
+}
+
+/* Title */
 h2 {
   text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
+
+/* Inputs */
 input, select, textarea {
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 25px; /* cylinder shape */
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 25px;
   border: none;
+  font-size: 14px;
 }
+
 textarea {
   border-radius: 15px;
+  min-height: 90px;
 }
+
+/* Button */
 button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
+  margin-top: 15px;
   background: #1fbe7a;
   border: none;
   color: white;
   font-size: 16px;
   border-radius: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #17a96c;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #ccc;
 }
 </style>
+
 </head>
 
 <body>
+
 <div class="container">
-<h2>KEO Safety Observation</h2>
 
-<form action="https://formsubmit.co/Ugochukwu.Odoemelam@keo.com" method="POST" enctype="multipart/form-data">
+  <div class="logo">
+    <img src="KEO.png">
+  </div>
 
-<input type="hidden" name="_next" value="https://jahanjaved.github.io/keo-observation/thank-you.html">
+  <h2>Safety Observation</h2>
 
-<label>Date</label>
-<input type="date" name="Date" required>
+  <form action="https://formsubmit.co/Ugochukwu.Odoemelam@keo.com" method="POST" enctype="multipart/form-data">
 
-<input type="text" name="Location" placeholder="Location / Cluster" required>
+    <input type="hidden" name="_next" value="https://jahanjaved.github.io/keo-observation/thank-you.html">
+    <input type="hidden" name="_captcha" value="false">
 
-<select name="Category">
-<option>Work at Height</option>
-<option>Scaffolding</option>
-<option>Housekeeping</option>
-<option>Electrical</option>
-<option>Fire Safety</option>
-<option>Traffic</option>
-<option>Other</option>
-</select>
+    <!-- Date -->
+    <input type="date" name="Date" required>
 
-<select name="Severity">
-<option>Low</option>
-<option>Medium</option>
-<option>High</option>
-<option>Critical</option>
-</select>
+    <!-- Location -->
+    <input type="text" name="Location" placeholder="Location / Cluster" required>
 
-<textarea name="Description" placeholder="Describe observation..." required></textarea>
+    <!-- Category -->
+    <select name="Category">
+      <option disabled selected>Select Category</option>
+      <option>Work at Height</option>
+      <option>Scaffolding</option>
+      <option>Housekeeping</option>
+      <option>Electrical</option>
+      <option>Fire Safety</option>
+      <option>Traffic</option>
+      <option>Other</option>
+    </select>
 
-<input type="file" name="file">
+    <!-- Severity -->
+    <select name="Severity">
+      <option disabled selected>Select Severity</option>
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+      <option>Critical</option>
+    </select>
 
-<button type="submit">Submit</button>
+    <!-- Description -->
+    <textarea name="Description" placeholder="Describe the observation..." required></textarea>
 
-</form>
+    <!-- Photo -->
+    <input type="file" name="attachment">
+
+    <!-- Submit -->
+    <button type="submit">Submit Observation</button>
+
+  </form>
+
+  <div class="footer">
+    KEO HSE Reporting System
+  </div>
+
 </div>
+
 </body>
 </html>
