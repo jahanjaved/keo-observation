@@ -1,0 +1,28 @@
+:root{
+  --navy:#061426;
+  --navy2:#0b2745;
+  --blue:#2ed3ff;
+  --green:#b7f05a;
+  --text:#ffffff;
+  --soft:#d9ecff;
+  --glass:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.16);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;background:#030b15;color:var(--text)}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 15% 10%,rgba(46,211,255,.28),transparent 34%),radial-gradient(circle at 85% 15%,rgba(183,240,90,.18),transparent 28%),linear-gradient(135deg,#061426,#081c31 48%,#020812);z-index:-2}
+body:after{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);z-index:-1}
+.pageShell{width:min(1180px,94vw);margin:0 auto;padding:28px 0}
+.heroCard{min-height:calc(100vh - 56px);border:1px solid var(--line);border-radius:34px;background:linear-gradient(145deg,rgba(10,31,53,.86),rgba(3,11,21,.93));box-shadow:0 28px 90px rgba(0,0,0,.45);overflow:hidden;position:relative}
+.heroCard:before{content:"";position:absolute;inset:auto -12% -28% -12%;height:44%;background:linear-gradient(90deg,rgba(46,211,255,.18),rgba(183,240,90,.12),rgba(46,211,255,.1));filter:blur(36px)}
+.topBar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:22px clamp(18px,4vw,46px);border-bottom:1px solid var(--line);background:rgba(2,9,18,.38);backdrop-filter:blur(14px)}
+.logo{width:92px;background:#fff;border-radius:16px;padding:9px;box-shadow:0 14px 38px rgba(0,0,0,.25)}
+.project{font-weight:900;letter-spacing:3px;color:var(--blue);font-size:clamp(11px,1.7vw,14px);text-align:right}
+.heroLayout{position:relative;z-index:2;display:grid;grid-template-columns:1fr minmax(310px,480px);gap:clamp(24px,5vw,58px);align-items:center;padding:clamp(24px,5vw,60px)}
+.titleBlock{padding:20px 0}.line{width:92px;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--green));margin-bottom:30px;box-shadow:0 0 28px rgba(46,211,255,.55)}
+h1{margin:0;font-size:clamp(42px,7vw,86px);line-height:.95;letter-spacing:-2.8px;font-weight:1000;text-shadow:0 12px 36px rgba(0,0,0,.55)}
+.videoCard{border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.075);backdrop-filter:blur(18px);padding:16px;box-shadow:0 22px 70px rgba(0,0,0,.34)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.tab{border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:12px 10px;background:rgba(0,0,0,.22);color:var(--soft);font-weight:900;cursor:pointer}.tab.active{background:linear-gradient(135deg,var(--blue),var(--green));color:#061426;border-color:transparent}
+.videoFrame{border-radius:24px;background:#02060c;padding:10px;border:1px solid rgba(255,255,255,.1)}
+video{display:block;width:100%;max-height:76vh;border-radius:18px;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+@media(max-width:900px){.heroLayout{grid-template-columns:1fr;padding:24px}.heroCard{border-radius:24px}.topBar{align-items:flex-start;gap:12px}.logo{width:78px}h1{letter-spacing:-1.4px}.videoCard{padding:12px}.tabs{grid-template-columns:1fr}.project{max-width:180px}}
