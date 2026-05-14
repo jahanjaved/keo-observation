@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KEO Safety Video</title>
+  <link rel="stylesheet" href="styles.css?v=compact-final-2" />
+</head>
+<body>
+  <main class="page">
+    <section class="playerCard">
+      <div class="tabs">
+        <button class="tab active" data-video="assets/english.mp4" data-lang="english">English</button>
+        <button class="tab" data-video="assets/arabic.mp4" data-lang="arabic">العربية</button>
+        <button class="tab" data-video="assets/hindi.mp4" data-lang="hindi">हिन्दी</button>
+      </div>
+
+      <div class="videoFrame">
+        <video id="mainVideo" controls playsinline preload="metadata" poster="assets/poster.jpg">
+          <source src="assets/english.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=compact-final-2"></script>
+</body>
+</html>
